@@ -1,9 +1,18 @@
 function reverseString(str) {
-    let res = "";
-    for (let i = str.length - 1; i >= 0; i--) {
-        res += str[i];
+    // 把str字串split成arr數列
+    let arr = str.split('');
+    let i = 0;
+    let j = str.length - 1;
+
+    while (i < j) {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++;
+        j--;
     }
-    return res;
+    //把arr數列join成字串 
+    return arr.join('');
 }
 
 reverseString("hello");
