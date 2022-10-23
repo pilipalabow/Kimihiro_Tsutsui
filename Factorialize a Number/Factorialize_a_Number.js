@@ -1,9 +1,10 @@
 function factorialize(num) {
-    let res = 1;
-    for (let i = 1; i <= num; i++) {
-        res *= i;
+    if (num === 0) {
+        return 1;
+    } else {
+        num = num * factorialize(num - 1);
+        return num;
     }
-    return res;
 }
-
+// 遞迴寫法
 factorialize(5);
